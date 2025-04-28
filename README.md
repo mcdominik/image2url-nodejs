@@ -35,8 +35,10 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#local-installation">Local Installation</a></li>
+      </ul>
+      <ul>
+        <li><a href="#docker-installation">Using Docker</a></li>
       </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -76,7 +78,7 @@ I want to send image (loseless) to my friend e.g. my_private_image.png, just loa
 To get a local copy up and running follow these simple example steps.
 
 
-### Installation
+### Local Installation
 
 1. Clone the repo
    ```sh
@@ -90,6 +92,18 @@ To get a local copy up and running follow these simple example steps.
    ```sh
    npm run dev
    ```
+
+### Docker Installation
+
+1. Clone the repo
+   ```sh
+   docker build -t file2url .
+   ```
+2. Run
+   ```sh
+   docker run -p 3000:3000 file2url
+   ```
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
