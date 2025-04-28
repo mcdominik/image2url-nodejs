@@ -11,11 +11,12 @@
     "@types/node": "^22.15.2",
     "@types/uuid": "^10.0.0",
     "ts-node-dev": "^2.0.0",
+    "tsc-alias": "^1.8.15",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.8.3"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && tsc-alias -p tsconfig.json",
     "start": "node -r tsconfig-paths/register dist/server.js",
     "dev": "ts-node-dev -r tsconfig-paths/register --watch src,views,.env --respawn --transpile-only src/server.ts",
     "clean": "rimraf dist storage",
