@@ -23,6 +23,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
+            set -e
             # determine the image tag from the triggering workflow's commit SHA
             # github.event.workflow_run.head_sha provides the full commit SHA
             export IMAGE_TAG=${{ secrets.DOCKERHUB_USERNAME }}/file2url-nodejs:${{ github.event.workflow_run.head_sha }}
