@@ -1,8 +1,7 @@
-
-<!-- PROJECT LOGO 
+<!-- PROJECT LOGO
 <br />
 <div align="center">
-  <a href="https://github.com/mcdominik/image2url-nodejs">
+  <a href="https://github.com/mcdominik/file2url-nodejs">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 --->
@@ -12,15 +11,13 @@
   <p align="center">
     Convert file to public download link.
     <br />
-    <a href="https://image2url.bieda.it">View Demo</a>
+    <a href="https://file2url.bieda.it">View Demo</a>
     &middot;
-    <a href="https://github.com/mcdominik/image2url-nodejs/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/mcdominik/file2url-nodejs/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     &middot;
-    <a href="https://github.com/mcdominik/image2url-nodejs/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/mcdominik/file2url-nodejs/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -47,42 +44,36 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 ![node logo](https://nodejs.org/en/next-data/og/announcement/Node.js%20—%20Run%20JavaScript%20Everywhere)
 
-
 In simple terms the app converts file to downloadable links.
 
 USECASE:
-I want to send image (loseless) to my friend e.g. my_private_image.png, just load it via form and you'll get https://image2url.bieda.it/file/{some-alias}
+I want to send image (loseless) to my friend e.g. my_private_image.png, just load it via form and you'll get https://file2url.bieda.it/file/{some-alias}
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ### Built With
 
-* [![Node][Node.js]][Node-url]
-* [![Express][Express.js]][Express-url]
+- [![Node][Node.js]][Node-url]
+- [![Express][Express.js]][Express-url]
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
-
 
 ### Local Installation
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/mcdominik/image2url.git
+   git clone https://github.com/mcdominik/file2url.git
    ```
 2. Install NPM packages
    ```sh
@@ -104,20 +95,18 @@ To get a local copy up and running follow these simple example steps.
    docker run -p 3000:3000 file2url
    ```
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- ROADMAP -->
+
 ## Roadmap
 
-See the [open issues](https://github.com/mcdominik/image2url-nodejs/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/mcdominik/file2url-nodejs/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -136,28 +125,26 @@ Don't forget to give the project a star! Thanks again!
 <!--- CONTRIBUTORS
 ### Top contributors:
 
-<a href="https://github.com/mcdominik/image2url-nodejs/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=mcdominik/image2url-nodejs" alt="contrib.rocks image" />
+<a href="https://github.com/mcdominik/file2url-nodejs/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=mcdominik/file2url-nodejs" alt="contrib.rocks image" />
 </a>
 --->
 
 <!-- LICENSE -->
+
 ## License
 
 Distributed under the project_license. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- CONTACT -->
+
 ## Contact
 
-Project Link: [https://github.com/mcdominik/image2url-nodejs](https://github.com/mcdominik/image2url-nodejs)
+Project Link: [https://github.com/mcdominik/file2url-nodejs](https://github.com/mcdominik/file2url-nodejs)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- ACKNOWLEDGMENTS
 ## Acknowledgments
@@ -168,10 +155,9 @@ Project Link: [https://github.com/mcdominik/image2url-nodejs](https://github.com
 --->
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
 [contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
