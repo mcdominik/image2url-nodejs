@@ -6,19 +6,12 @@ import { fileStore } from "@utils/file-store";
 import { UploadedFile } from "../types/uploaded-file.types";
 import { logger } from "@utils/logger";
 import { getCoolRandomName } from "@utils/get-cool-random.name";
+import { htmlContent } from "@utils/home-content";
 
 export const handleGetHome = (req: Request, res: Response) => {
-  res.send(`
-        <h1>Image Sharing Service</h1>
-        <hr>
-        <form action="/upload" method="post" enctype="multipart/form-data">
-            <input type="file" name="imageFile" accept="image/png, image/jpeg, image/gif, image/webp, image/tiff" required>
-            <button type="submit">Upload</button>
-        </form>
-        <hr>
-        <p>Links expire after ${config.linkExpiryMinutes} minutes.</p>
-        <p>Currently stored files: ${fileStore.getSize()}</p>
-    `);
+  // Send the response
+  res.setHeader("Content-Type", "text/html");
+  res.send(htmlContent(config.linkExpiryMs));
 };
 
 export const handleUploadFile = (
