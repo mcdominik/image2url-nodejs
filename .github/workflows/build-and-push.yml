@@ -32,7 +32,7 @@ jobs:
           images: ${{ secrets.DOCKERHUB_USERNAME }}/file2url-nodejs
           tags: |
             type=ref,event=branch
-            type=sha
+            type=sha,format=long
             type=raw,value=latest,enable={{is_default_branch}}
 
       - name: Build and push Docker image
