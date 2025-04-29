@@ -1,5 +1,4 @@
 import fs from "fs";
-import path from "path";
 import config from "@config/index";
 import { fileStore } from "@utils/file-store";
 import { logger } from "@utils/logger";
@@ -56,9 +55,7 @@ function startPeriodicCleanup(): void {
     return;
   }
   logger.info(
-    `Starting periodic cleanup. Interval: ${
-      config.cleanupIntervalMs / 1000
-    } seconds.`
+    `Starting periodic cleanup. Interval: ${config.cleanupIntervalSeconds} seconds.`
   );
 
   runPeriodicCleanup();

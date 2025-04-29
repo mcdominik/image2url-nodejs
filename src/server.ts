@@ -4,14 +4,13 @@ import { logger } from "@utils/logger";
 import { fileService } from "@services/file.service";
 
 const server = app.listen(config.port, () => {
-  logger.info(`Server running on http://localhost:${config.port}`);
   logger.info(`Environment: ${config.env}`);
+  logger.info(`Server running on port: ${config.port}`);
   logger.info(`Storage (uploads) directory: ${config.uploadDir}`);
   logger.info(`Maximum file size: ${config.maxFileSizeMB} MB`);
-  logger.info(`Link expiry time: ${config.linkExpiryMinutes} minutes`);
-  logger.info(
-    `Cleanup check interval: ${config.cleanupIntervalMs / 1000} seconds`
-  );
+  logger.info(`Link expiry time: ${config.linkExpiryMinutes}min`);
+  logger.info(`Allowed mime types: ${config.allowedMimeTypes}`);
+  logger.info(`Cleanup interval: ${config.cleanupIntervalSeconds}s`);
 });
 
 // graceful shutdown handling

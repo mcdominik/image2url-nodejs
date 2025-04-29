@@ -4,8 +4,6 @@ import { fileService } from "@services/file.service";
 import { logger } from "@utils/logger";
 import { errorHandler } from "@middleware/error-handler.middleware";
 
-require("dotenv").config();
-
 const app = express();
 
 app.use(express.json());

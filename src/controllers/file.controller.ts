@@ -50,7 +50,7 @@ export const handleUploadFile = (
       `File uploaded: ${fileData.originalName} -> ${fileData.filePath} (ID: ${id})`
     );
 
-    const downloadUrl = `${process.env.APP_URL}/file/${id}`;
+    const downloadUrl = `${config.downloadDomain}/file/${id}`;
 
     res.status(201).send(`
         <h1>Your link: ${downloadUrl}</h1>
