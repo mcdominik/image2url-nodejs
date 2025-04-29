@@ -1,0 +1,47 @@
+name: Deploy to Server
+
+on:
+  workflow_run:
+    workflows: ["Build and Push Docker Image"] # matches the 'name:' of build-and-push.yml
+    types:
+      - completed # trigger when the build workflow completes
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    # only run if the triggering workflow was successful
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+      - name: Deploy to Server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            # determine the image tag from the triggering workflow's commit SHA
+            # github.event.workflow_run.head_sha provides the full commit SHA
+            export IMAGE_TAG=${{ secrets.DOCKERHUB_USERNAME }}/file2url-nodejs:${{ github.event.workflow_run.head_sha }}
+            export CONTAINER_NAME=file2url-nodejs
+            export HOST_PORT=3000
+            export CONTAINER_PORT=5000
+
+            echo "Triggering workflow concluded: ${{ github.event.workflow_run.conclusion }}"
+            echo "Deploying image pushed from commit: ${{ github.event.workflow_run.head_sha }}"
+            echo "Using image: $IMAGE_TAG"
+
+            docker pull $IMAGE_TAG
+
+            echo "Stopping and removing existing container: $CONTAINER_NAME"
+            docker stop $CONTAINER_NAME || true
+            docker rm $CONTAINER_NAME || true
+
+            echo "Starting new container: $CONTAINER_NAME"
+            docker run -d --name $CONTAINER_NAME -p $HOST_PORT:$CONTAINER_PORT $IMAGE_TAG
+
+            echo "Cleaning up dangling and unused images..."
+            docker image prune -a -f
