@@ -42,7 +42,15 @@ jobs:
             docker rm $CONTAINER_NAME || true
 
             echo "Starting new container: $CONTAINER_NAME"
-            docker run -d --name $CONTAINER_NAME -p $HOST_PORT:$CONTAINER_PORT $IMAGE_TAG
+            docker run -d \
+             --name $CONTAINER_NAME \
+             -p $HOST_PORT:$CONTAINER_PORT $IMAGE_TAG \
+             -e ENV_TYPE="dev" \
+             -e DOWNLOAD_DOMAIN="https://file2url.bieda.it" \
+             -e LINK_EXPIRY_MINUTES=60 \
+             -e MAX_FILE_SIZE_MB=10 \
+             -e PORT=3000 \
+             -e CLEANUP_INTERVAL_SECONDS=10
 
             echo "Cleaning up dangling and unused images..."
             docker image prune -a -f
