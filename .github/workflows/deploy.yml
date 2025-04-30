@@ -28,7 +28,7 @@ jobs:
             # github.event.workflow_run.head_sha provides the full commit SHA
             export IMAGE_TAG=${{ secrets.DOCKERHUB_USERNAME }}/file2url-nodejs:${{ github.event.workflow_run.head_sha }}
             export CONTAINER_NAME=file2url-nodejs
-            export HOST_PORT=5000
+            export HOST_PORT=6000
             export CONTAINER_PORT=3000
 
             echo "Triggering workflow concluded: ${{ github.event.workflow_run.conclusion }}"
