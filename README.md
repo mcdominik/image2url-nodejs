@@ -73,7 +73,7 @@ To get a local copy up and running follow these simple example steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/mcdominik/file2url.git
+   git clone https://github.com/mcdominik/file2url-nodejs.git
    ```
 2. Install NPM packages
    ```sh
