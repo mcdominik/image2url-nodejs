@@ -21,3 +21,8 @@ jobs:
 
       - name: Run e2e tests
         run: npm run test:e2e -- --runInBand
+        env:
+          NODE_ENV: test
+          INK_EXPIRY_MINUTES: 60
+          MAX_FILE_SIZE_MB: 10
+          CLEANUP_INTERVAL_SECONDS: 10
