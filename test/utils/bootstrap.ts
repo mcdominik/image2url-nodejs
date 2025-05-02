@@ -1,9 +1,6 @@
 import http from "http";
 import { Express } from "express";
-import request from "supertest";
-
 import app from "../../src/app";
-
 import { fileService } from "../../src/services/file.service";
 import { logger } from "../../src/utils/logger";
 
