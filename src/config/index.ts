@@ -3,8 +3,8 @@ import path from "path";
 require("dotenv").config();
 
 const config = {
-  downloadDomain: process.env.DOWNLOAD_DOMAIN,
-  env: process.env.ENV_TYPE,
+  downloadDomain: process.env.DOWNLOAD_DOMAIN || "localhost",
+  env: process.env.ENV_TYPE || "dev",
   port: process.env.PORT || 3000,
   uploadDir: path.resolve(__dirname, "..", "..", "storage"),
   maxFileSizeMB: process.env.MAX_FILE_SIZE_MB,
